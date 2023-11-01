@@ -1,0 +1,33 @@
+/* Custom styles */
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 18rem;
+}
+/* ... (previous styles) */
+
+/* Bell List styles */
+.bell-list {
+  list-style: none;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 0;
+  width: 150px; /* Adjust width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none; /* Initially hide the list */
+}
+
+.bell-list li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.bell-list li:hover {
+  background: #f0f0f0;
+}

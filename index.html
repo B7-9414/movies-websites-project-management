@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movies Stream</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Movies Stream</a>
+    
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </li>
+            <li class="nav-item mx-3">
+                <a href="#" class="nav-link"><i class="bi bi-mic-fill"></i></a>
+            </li>
+            <li class="nav-item mx-3" id="bellIcon" style="position: relative;">
+                <a href="#" class="nav-link"><i class="bi bi-bell"></i></a>
+                <ul id="bellList" class="bell-list" style="display: none;"></ul>
+            </li>
+            <li class="nav-item mx-3">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="peopleDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-person-circle"></i> Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="peopleDropdown">
+                        <a class="dropdown-item" style="color: brown;" href="#">Bassam <i class="bi bi-person-circle" style="color: brown;"></i></a>
+                        <a class="dropdown-item" href="#">Kyle <i class="bi bi-person-circle"></i></a>
+                        <a class="dropdown-item" href="settings.html">Settings</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <h3>Movies</h3>
+        <div class="filters">
+            <button class="btn btn-outline-secondary active">All</button>
+            <button class="btn btn-outline-secondary">Action</button>
+            <button class="btn btn-outline-secondary">Comedy</button>
+            <button class="btn btn-outline-secondary">Coming Soon</button>
+
+            <!-- Add more genre filters -->
+        </div>
+
+        <div class="movies-container row mt-4">
+            <!-- Movie Cards -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="1.jpeg" class="card-img-top" alt="Movie 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 1</h5>
+                        <p class="card-text">Description of Movie 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Released: 09/30/2023</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat similar card structure for other movies -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="1.jpeg" class="card-img-top" alt="Movie 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 2</h5>
+                        <p class="card-text">Description of Movie 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Released: 09/15/2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="1.jpeg" class="card-img-top" alt="Movie 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 3</h5>
+                        <p class="card-text">Description of Movie 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Released: 09/01/2023</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="2.jpeg" class="card-img-top" alt="Movie 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 4</h5>
+                        <p class="card-text">Description of Movie 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Released: 09/15/2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="2.jpeg" class="card-img-top" alt="Movie 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 5</h5>
+                        <p class="card-text">Description of Movie 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Upcoming Release: 12/01/2023</p>
+                        <a href="#" class="btn btn-danger bell-icon" data-movie="Movie 5"><i class="bi bi-bell"></i></a>
+                        <button type="button" class="btn btn-secondary">Coming Soon!</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="2.jpeg" class="card-img-top" alt="Movie 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Title 6</h5>
+                        <p class="card-text">Description of Movie 6. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Upcoming Release: 12/15/2023</p>
+                        <a href="#" class="btn btn-danger bell-icon" data-movie="Movie 6"><i class="bi bi-bell"></i></a>
+                        <button type="button" class="btn btn-secondary">Coming Soon!</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add 4 more movie cards using a similar structure -->
+        </div>
+    </div>
+    <script>
+        const bellIcons = document.querySelectorAll('.bell-icon');
+        const bellIcon = document.getElementById('bellIcon');
+        const bellList = document.getElementById('bellList');
+    
+        bellIcons.forEach(icon => {
+            icon.addEventListener('click', function() {
+                const movieName = this.getAttribute('data-movie');
+                const newListItem = document.createElement('li');
+                newListItem.textContent = movieName;
+                bellList.appendChild(newListItem);
+            });
+        });
+    
+        bellIcon.addEventListener('click', function() {
+            bellList.style.display = (bellList.style.display === 'none' || bellList.style.display === '') ? 'block' : 'none';
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

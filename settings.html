@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movies Stream</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Movies Stream</a>
+    
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </li>
+            <li class="nav-item mx-3">
+                <a href="#" class="nav-link"><i class="bi bi-mic-fill"></i></a>
+            </li>
+            <li class="nav-item mx-3" id="bellIcon" style="position: relative;">
+                <a href="#" class="nav-link"><i class="bi bi-bell"></i></a>
+                <ul id="bellList" class="bell-list" style="display: none;"></ul>
+            </li>
+            <li class="nav-item mx-3">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="peopleDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <i class="bi bi-person-circle"></i> Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="peopleDropdown">
+                        <a class="dropdown-item" style="color: brown;" href="#">Bassam <i class="bi bi-person-circle" style="color: brown;"></i></a>
+                        <a class="dropdown-item" href="#">Kyle <i class="bi bi-person-circle"></i></a>
+                        <a class="dropdown-item" href="settings.html">Settings</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="container mt-4">
+        <h3>Settings</h3>
+    <div class="container mt-4">
+        <div class="accordion" id="settingsAccordion">
+            <div class="card">
+                <div class="card-header" id="subscriptionHeading">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#subscriptionCollapse"
+                            aria-expanded="true" aria-controls="subscriptionCollapse">
+                            Subscription Management
+                        </button>
+                    </h2>
+                </div>
+                <div id="subscriptionCollapse" class="collapse show" aria-labelledby="subscriptionHeading"
+                    data-parent="#settingsAccordion">
+                    <div class="card-body">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="netflixCheck" checked>
+                            <label class="custom-control-label" for="netflixCheck">Netflix</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="appletvCheck" checked>
+                            <label class="custom-control-label" for="appletvCheck">Apple TV</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="huluCheck" checked>
+                            <label class="custom-control-label" for="huluCheck">Hulu</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="amazonCheck" checked>
+                            <label class="custom-control-label" for="huluCheck">Amazon Prime Video</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="DisneyCheck">
+                            <label class="custom-control-label" for="huluCheck">Disney+</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="HBOMaxCheck" checked>
+                            <label class="custom-control-label" for="huluCheck">HBO Max</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="YouTubeCheck" checked>
+                            <label class="custom-control-label" for="huluCheck">YouTube Premium</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="costSavingHeading">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#costSavingCollapse" aria-expanded="false" aria-controls="costSavingCollapse">
+                            Cost Saving
+                        </button>
+                    </h2>
+                </div>
+                <div id="costSavingCollapse" class="collapse" aria-labelledby="costSavingHeading"
+                    data-parent="#settingsAccordion">
+                    <div class="card-body">
+                        <label for="costFilter">Filter by Cost:</label>
+                        <input type="range" class="form-control-range" min="0" max="100" value="50" id="costFilter">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="card-header" id="watchPreferencesHeading">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#watchPreferencesCollapse" aria-expanded="false" aria-controls="watchPreferencesCollapse">
+                            Watch Preferences
+                        </button>
+                    </h2>
+                </div>
+                <div id="watchPreferencesCollapse" class="collapse" aria-labelledby="watchPreferencesHeading"
+                    data-parent="#settingsAccordion">
+                    <div class="card-body">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="moviesCheck" checked>
+                            <label class="custom-control-label" for="moviesCheck">Movies</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="seriesCheck" disabled>
+                            <label class="custom-control-label" for="seriesCheck">Series</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="runCheck" disabled>
+                            <label class="custom-control-label" for="seriesCheck">Runtime restrictions</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="GPreferencesHeading">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#GenralPreferencesCollapse" aria-expanded="false" aria-controls="GenralPreferencesCollapse">
+                            General Preferences
+                        </button>
+                    </h2>
+                </div>
+                <div id="GenralPreferencesCollapse" class="collapse" aria-labelledby="GPreferencesHeading"
+                    data-parent="#settingsAccordion">
+                    <div class="card-body">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="GCheck" checked>
+                            <label class="custom-control-label" for="GCheck">Background Show</label>
+                        </div>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="GseriesCheck" disabled>
+                            <label class="custom-control-label" for="GseriesCheck">Blackout Periods</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
